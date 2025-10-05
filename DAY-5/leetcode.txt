@@ -1,0 +1,18 @@
+Question number: 136
+Title: Single number
+description: vector given(all numbers as a pair except for one, find out that number)
+Approch: 
+1] using bitwise XOR operator over the entire vector
+2] n^n = 0 and n^0 = n 
+code:
+
+class Solution {
+public:
+    int singleNumber(vector<int>& nums) {
+        int ans=0;
+        for(int i=0; i<nums.size(); i++){
+            ans=ans^nums[i];
+        }
+        return ans;
+    }
+};
