@@ -1,0 +1,65 @@
+[I]
+Question number: 53
+Title: maximum subarray
+description: vector given calculate the maximum sum of sub array(continous)
+Approch: 
+1] take csum=0, make csum = element if(csum+element<element) ie. csum is in negative else add element to csum 
+2] finally compare with max sum and update its value
+3] kadanes algorithm
+code:
+
+class Solution {
+public:
+    int maxSubArray(vector<int>& nums) {
+        int csum= 0;
+        int msum= INT_MIN;
+        for(int i=0; i<nums.size(); i++){
+            if(csum+nums[i]<nums[i]){
+                csum=nums[i];
+            }
+            else{
+            csum+=nums[i];
+            }
+            msum=max(msum, csum);
+        }
+        return msum;
+    }
+};
+
+[II]
+Question number: 169
+Title: majority element
+description: vector given find the element which has a frequency greater than floor(n/2) where n is size of vector
+Approch: 
+0]sort the vector
+1] start with the first element check with previous element if it is same increase frequency.
+2] if it is not equal then check for frequency condition if satisfied return value 
+3] if does not satisfy then make freq=1 and current element as ans and continue the process;
+code:
+
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+        sort(nums.begin(), nums.end());
+        int ans =nums[0];
+        int n = nums.size();
+        int freq=1;
+        if(n==1){
+            return nums[0];
+        }
+        for(int i=1; i<n; i++){
+            if(nums[i]==nums[i-1]){
+                freq++;
+            }
+            else{
+            freq=1;
+            ans=nums[i];
+            }
+            if(freq>n/2){
+                return ans;
+            }
+            
+        }
+        return -1;
+    }
+};
