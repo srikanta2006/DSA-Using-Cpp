@@ -1,0 +1,31 @@
+[I]
+Question number: 50
+Title: Pow(x,n)
+description: provided x and n calculate power of x raised to n using O(log n) time complexity.
+Approch: 
+1] take binary bits of the power from back and if it 1 multiply x to the answer.
+2] if it zero dont multiply
+3] in common after each bit shift make x=x*x  (squared).
+4] we get ans as the original answer after all bits are traversed.
+code:
+
+class Solution {
+public:
+    double myPow(double x, int n) {
+        double ans=1;
+        long binary=n;
+        if(n<0){
+            x=1/x;
+            binary=-binary;
+        }
+
+        while(binary>0){
+            if(binary%2==1){
+                ans=ans*x;
+            }
+            x=x*x;
+            binary=binary/2;
+        }
+        return ans;
+    }
+};
