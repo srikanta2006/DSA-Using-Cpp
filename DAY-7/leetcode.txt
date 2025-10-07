@@ -29,3 +29,28 @@ public:
         return ans;
     }
 };
+
+
+[II]
+Question number: 268
+Title: Missing number
+description: given array of range 0-n where n is the size of array, includes all elements from 0-n except for 1, find and return 
+Approch: 
+1] calculate range sum from 0-n and sum of elements 
+2] return difference.
+code:
+
+class Solution {
+public:
+    int missingNumber(vector<int>& nums) {
+        int nums_sum=0;
+        int n =nums.size();
+        int range_sum = n*(n+1)/2;
+
+        for(int ele : nums){
+         nums_sum+=ele;
+        }
+        return range_sum-nums_sum;
+
+    }
+};
