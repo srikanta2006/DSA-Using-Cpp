@@ -1,0 +1,27 @@
+[I]
+Question number: 238
+Title: Product of Array Except Self
+description: given an array. return the solution array which consists of product of all elements of the array excluding self.
+Approch: 
+1] take a for loop for each element and calculate prefix product.
+2] take another loop for each element and calculate suffix product.
+3] take another loop and multipy both values and push to ans vector
+code:
+
+class Solution {
+public:
+    vector<int> productExceptSelf(vector<int>& nums) {
+       int n=nums.size();
+       vector<int> ans(n,1);
+
+       for(int i=1; i<n; i++){
+        ans[i]=ans[i-1]*nums[i-1];
+       }
+       int suffix=1;
+       for(int i=n-2; i>=0; i--){
+        suffix*=nums[i+1];
+        ans[i]*=suffix;
+       }
+       return ans;
+    }
+};
