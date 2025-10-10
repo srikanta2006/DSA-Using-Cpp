@@ -1,0 +1,75 @@
+[I]
+Question number:217
+Title: Contains Duplicate
+description: Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
+
+Intuition:
+If we go with two loop method which is brute froce the time complexity becomes O(n^2).
+But according to the constraints n<=10^5 we can only afford till O(nlogn).
+
+Approach:
+1]We can go for sorting the array so that all the duplicates if any falls next to each other.
+2]Run a single loop to find the duplicates
+
+Complexity:
+Time complexity:
+sorting function = O(nlogn)
+for loop = O(n)
+overall = O(nlogn)
+
+Space complexity:
+O(1)
+
+Code:
+class Solution {
+public:
+    bool containsDuplicate(vector<int>& nums) {
+        sort(nums.begin(), nums.end());
+        int n = nums.size();
+        for(int i = 0; i<n-1; i++){
+            if(nums[i]==nums[i+1]){
+                return true;
+            }
+        }
+        return false;
+    }
+};
+
+[II]
+
+Question number:283
+Title: Move Zeros
+description: Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.
+
+Intuition:
+we can create a new vector of same size of given vector. take two pointers start and end, loop over nums, if nums[i]==0, make temp[end]=0 and end--
+or else make temp[start]=nums[i] and front ++;
+
+but by this approach we are using a new vector which voilates the space complexity issue.
+
+Approach:
+1]we need to take two pointers , first_zero=0, i=0;
+2]iterate over the nums if it is non zero swap nums[first_zero] and nums[i] and increase first_zero++
+3]if it is zero just increment i untill it is non zero again or end of array
+
+Complexity:
+Time complexity:
+for loop = O(n)
+overall = O(n)
+
+Space complexity:
+O(1)---> no new array
+
+Code:
+class Solution {
+public:
+    void moveZeroes(vector<int>& nums) {
+        int pos_zero=0;
+        for (int i = 0 ; i<nums.size(); i++){
+            if(nums[i]!=0){
+                swap(nums[pos_zero], nums[i]);
+                pos_zero++;
+            }
+        }
+    }
+};
