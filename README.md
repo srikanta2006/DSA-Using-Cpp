@@ -1,61 +1,69 @@
-💻 100 Days of DSA — Progress Tracker
+# 🖥️ DSA Practice – Daywise
 
-Welcome to my Day-wise DSA Practice Repository!
-I’m documenting my daily learning journey in Data Structures and Algorithms — one concept, one day at a time 🚀
+This repo contains daily DSA problems organized by day. Each day focuses on a specific topic with solved problems, notes, and LeetCode insights.
 
-📅 Day-wise Progress
-Day	Folder	Topics / Highlights
-01	DAY-01
-	Getting started with arrays & loops
-02	DAY-02
-	Solved problems on binary numbers
-03	DAY-03
-	more loops
-04	DAY-04
-	Array concepts
-05	DAY-05
-	Vector concepts from STL 
-06	DAY-06
-	Moore algo and kandane algo
-07	DAY-07
-	Binary exponentiation
-08	DAY-08
-	Two pointers
-09	DAY-09
-	Prefix & suffix
-10	DAY-10
-	Pass by reference(pointers & alias)
-🧩 About Each Day
+---
 
-Each DAY-x folder contains all practice codes related to that day’s topic.
+## 📂 Folder Structure
 
-For every LeetCode problem I solve, I also write a short note in a file named leetcode.txt, which includes:
+```bash
+DSA-Repository/
+│
+├─ Day-1/
+│   ├─ problem1.cpp
+│   ├─ problem2.cpp
+│   └─ leetcode.txt      # Intuition, Approach, Complexity
+│
+├─ Day-2/
+│   ├─ ...
+│
+└─ README.md
 
-🧠 Intuition behind the solution
+## Notes
+Day folders: Problems solved on that day.
 
-⚙️ Approach I followed
+LeetCode.txt: Intuition ✅ Approach ✅ Time & Space Complexity ✅
 
-⏱️ Time & Space Complexity
+Code files: Well-commented for clarity.
 
-This helps me revise faster and understand why a solution works — not just how.
+🎯 Purpose
+Track daily progress in DSA.
 
-🛠️ Tech Setup
+Keep a structured record of solved problems.
 
-Language: C++
+Include notes and complexity analysis for quick revision.
 
-Editor: VS Code
+🚀 How to Use
+Go to a day folder → view solved problems.
 
-Version Control: Git & GitHub
+Open leetcode.txt → read approach, intuition, and complexities.
 
-🎯 Goal
+Use this repo as a reference or revision guide.
 
-To build strong problem-solving skills, improve logical thinking, and stay consistent with DSA before placements.
+🛠️ How to Contribute / Clone
+Clone the repo:
 
-📊 Progress Tracker
+Bash
 
-📄 DSA for PLACEMENTS.xlsx
- — my daily tracking sheet with topics and solved problems.
+git clone [https://github.com/](https://github.com/)<your-username>/<repo-name>.git
+Create a new branch for your updates:
 
-🌟 Support
+Bash
 
-If you like this project or find it helpful, don’t forget to ⭐ the repo and follow along my journey!
+git checkout -b day-<number>-updates
+Add your code and notes in the relevant day folder.
+
+Commit changes:
+
+Bash
+
+git add .
+git commit -m "Add Day X DSA problems"
+Push your branch and create a Pull Request.
+
+📌 Tips
+Update daily for consistency.
+
+Write intuition + approach in leetcode.txt for each solved problem.
+
+Keep code clean and commented.
